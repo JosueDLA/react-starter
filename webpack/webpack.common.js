@@ -6,7 +6,7 @@ const yaml = require("yamljs");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   output: {
     filename: "js/bundle.[contenthash].js",
     path: path.resolve(__dirname, "../dist"),
@@ -15,11 +15,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         use: "babel-loader",
         exclude: /node_modules/,
         resolve: {
-          extensions: [".js", ".jsx"],
+          extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
       },
       {
